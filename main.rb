@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 def subtract(a, b)
   (a-b)
 end
 
 def exponent(a, b)
   (a**b)
+end
 
 def add(num1,num2)
   num1+num2
@@ -20,5 +20,4 @@ end
 
 def square_root(a)
   a.sqrt
-
 end

@@ -16,8 +16,7 @@ while selection != "q"
 
   if selection == "a"
 
-    #insert advanced calc
-    puts "advanced calc"
+    advCalc
 
 
   elsif selection == "b"
@@ -69,7 +68,7 @@ def square_root(a)
 end
 
 def advCalc
-  print "Do you want to raise a number to a power or find a square root? Enter P for power and S for sqaure root: "
+  print "Do you want to raise a number to a power or find a square root? Enter P for power and S for square root: "
   initialSelection = gets.chomp.downcase
 
   if initialSelection == "p"

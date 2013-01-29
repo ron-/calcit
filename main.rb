@@ -1,4 +1,4 @@
-require rainbow
+require "rainbow"
 
 def subtract(a, b)
   (a-b)
@@ -72,17 +72,26 @@ def advCalc
     num1 = gets.chomp.to_i
     print "Please enter the number you would like to raise the previous number to: "
     num2 = gets.chomp.to_i
-    puts "#{num1} to the #{num2} result is #{exponent(num1, num2)}"
+    puts "#{num1}".color(:blue) + " to the "+"#{num2}".color(:blue) +" result is " + "#{exponent(num1, num2)}".color(:red)
   elsif initialSelection == "s"
     print "Please eneter the number you would like to be sqaure rooted: "
     num3 = gets.chomp.to_i
-    puts "The square root of #{num3} is #{square_root(num3)}"
+    puts "The square root of " + "#{num3}".color(:blue) +" is " +"#{square_root(num3)}".color(:red)
   else
     puts "You did not enter p or s. Please try again."
 
   end
 
 end
+
+def BMICalc
+  print "Please enter your weight in pounds: "
+  weight = gets.chomp.to_f
+  print "Please enter your height in inches: "
+  height = gets.chomp.to_f
+  puts "Your "+"BMI".color(:blue) +" is "+"#{(weight/(height**2))*702}".color(:red)
+end
+
 # Calculator selection and quit option -Ron
 
 puts "   _________    __   ________________"

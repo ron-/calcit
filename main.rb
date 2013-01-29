@@ -1,5 +1,3 @@
-require 'rainbow'
-
 def subtract(a, b)
   (a-b)
 end
@@ -99,6 +97,20 @@ def mortgage
   puts "$#{m(p, i, n)}"
 end
 
+puts "   _________    __   ________________".color(:red)
+puts "  / ____/   |  / /  / ____/  _/_  __/".color(:red)
+puts " / /   / /| | / /  / /    / /  / /   ".color(:red)
+puts "/ /___/ ___ |/ /__/ /____/ /  / /    ".color(:red)
+puts " \____/_/  |_/_____|____/___/ /_/     ".color(:red)
+
+puts "                                                           "
+puts "Welcome to CalcIT!".color(:cyan) + " The GREATEST calculator ever conceived by the human mind."
+puts "Please select a calculator:"
+print "Enter 'a' for advanced, 'b' for basic, 'i' to calculate bmi,"
+puts "'m' to calculate monthly mortgage payments or 'q' to quit calcit: "
+selection = gets.chomp.downcase
+
+
 # # Calculator selection and quit option -Ron
 
 # puts "   _________    __   ________________"
@@ -120,6 +132,19 @@ end
 #     advCalc
 
 
+  elsif selection == "i"
+
+    # bmi calc function
+    puts "BMI calculator goes here"
+
+  elsif selection == "m"
+
+    # mortgage function
+    puts "Mortgage calculator goes here"
+
+  else
+
+
 #   elsif selection == "b"
 
 #     basic_calc
@@ -132,5 +157,10 @@ end
 
 #   print "Enter 'a' for advanced, 'b' for basic, or 'q' to quit calcit: "
 #   selection = gets.chomp.downcase
+
+  puts "Enter 'a' for advanced, 'b' for basic, 'i' to calculate bmi,"
+  puts "'m' to calculate monthly mortgage payments or 'q' to quit calcit: "
+
+  selection = gets.chomp.downcase
 
 # end

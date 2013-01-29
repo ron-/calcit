@@ -109,6 +109,15 @@ def mortgage
   puts "$#{m(p, i, n)}"
 end
 
+def calcMPG(mpg)
+  if mpg <= 60
+    mpgadj = mpg
+  else
+    over = mpg - 60
+    mpgadj = mpg + over * 2
+    mpgadj
+  end
+end
 
 puts "   _________    __   ________________".color(:red)
 puts "  / ____/   |  / /  / ____/  _/_  __/".color(:red)

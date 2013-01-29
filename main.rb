@@ -25,7 +25,7 @@ def exponent(a, b)
 end
 
 def square_root(a)
-  a.sqrt
+  Math.sqrt(a)
 end
 
 
@@ -84,13 +84,14 @@ def advCalc
 
 end
 
-def BMICalc
+def bmiCalc
   print "Please enter your weight in pounds: "
   weight = gets.chomp.to_f
   print "Please enter your height in inches: "
   height = gets.chomp.to_f
   puts "Your "+"BMI".color(:blue) +" is "+"#{(weight/(height**2))*702}".color(:red)
 end
+
 
 # Calculator selection and quit option -Ron
 
@@ -121,7 +122,7 @@ while selection != "q"
   elsif selection == "i"
 
     # bmi calc function
-    puts "BMI calculator goes here"
+    bmiCalc
 
   elsif selection == "m"
 

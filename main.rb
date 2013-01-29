@@ -84,6 +84,7 @@ def advCalc
 
 end
 
+
 def bmiCalc
   print "Please enter your weight in pounds: "
   weight = gets.chomp.to_f
@@ -93,7 +94,21 @@ def bmiCalc
 end
 
 
-# Calculator selection and quit option -Ron
+def m (p, i, n)
+  p*(((i*(1+i)**n))/(((1+i)**n)-1))
+end
+
+def mortgage
+  print "What is the Principal of your loan? "
+  p = gets.chomp.to_i
+  print "What is the Anual Interest rate as a percentage? "
+  i = gets.chomp.to_f
+  i = (i/12)/100
+  print "How many Payments are you willing to make? "
+  n = gets.chomp.to_i
+  puts "$#{m(p, i, n)}"
+end
+
 
 puts "   _________    __   ________________".color(:red)
 puts "  / ____/   |  / /  / ____/  _/_  __/".color(:red)
@@ -108,16 +123,13 @@ print "Enter 'a' for advanced, 'b' for basic, 'i' to calculate bmi,"
 puts "'m' to calculate monthly mortgage payments or 'q' to quit calcit: "
 selection = gets.chomp.downcase
 
+
 while selection != "q"
 
   if selection == "a"
 
     advCalc
 
-
-  elsif selection == "b"
-
-    basic_calc
 
   elsif selection == "i"
 
@@ -127,7 +139,12 @@ while selection != "q"
   elsif selection == "m"
 
     # mortgage function
-    puts "Mortgage calculator goes here"
+    mortgage
+
+
+  elsif selection == "b"
+
+    basic_calc
 
   else
 
@@ -135,9 +152,10 @@ while selection != "q"
 
   end
 
+
   puts "Enter 'a' for advanced, 'b' for basic, 'i' to calculate bmi,"
   puts "'m' to calculate monthly mortgage payments or 'q' to quit calcit: "
 
   selection = gets.chomp.downcase
 
-end
+ end

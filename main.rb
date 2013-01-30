@@ -114,7 +114,7 @@ def trip
   distance = gets.chomp.to_f
   print "How many MPG does your car get? "
   mpg = gets.chomp.to_f
-  print "How much does a single gallon of gas cost?"
+  print "How much does a single gallon of gas cost? "
   price = gets.chomp.to_f
   print "How fast are you driving in mph? "
   speed = gets.chomp.to_f
@@ -124,9 +124,22 @@ def trip
 
   time = "#{hours} hours and #{mins} minutes"
 
-  puts "Your total trip time is "+"#{time}".color(:red) + " and it will cost $"+"{cost}".color(:red)
+  puts "Your total trip time is "+"#{time}".color(:red) + " and it will cost $"+"#{cost(distance, mpg, speed, price)}".color(:red)
 end
 
+def calcMPG(speed, mpg)
+  if speed <= 60
+    mpg
+  else
+    over = speed - 60
+    mpg = mpg - (over * 2)
+    mpg
+  end
+end
+
+def cost (distance, mpg, speed, price)
+  (distance/calcMPG(speed, mpg))*price
+end
 
 
 puts "   _________    __   ________________".color(:red)

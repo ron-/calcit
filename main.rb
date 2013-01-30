@@ -109,8 +109,20 @@ def mortgage
   puts "$#{m(p, i, n)}"
 end
 
-def cost (distance, mpgadj, price)
-  (distance/mpgadj)*price
+def calcMPG(speed, mpg)
+  if speed <= 60
+    mpg
+  else
+    over = speed - 60
+    mpg = mpg - (over * 2)
+    mpg
+  end
+
+def cost (distance, mpg, speed, price)
+  (distance/calcMPG(speed, mpg))*price
+
+
+
 end
 
 puts "   _________    __   ________________".color(:red)

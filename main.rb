@@ -109,6 +109,25 @@ def mortgage
   puts "$#{m(p, i, n)}"
 end
 
+def trip
+  print "How many miles are you going? "
+  distance = gets.chomp.to_f
+  print "How many MPG does your car get? "
+  mpg = gets.chomp.to_f
+  print "How much does a single gallon of gas cost?"
+  price = gets.chomp.to_f
+  print "How fast are you driving in mph? "
+  speed = gets.chomp.to_f
+
+  hours = (distance/speed).to_i
+  mins = (distance%speed).to_i
+
+  time = "#{hours} hours and #{mins} minutes"
+
+  puts "Your total trip time is "+"#{time}".color(:red) + " and it will cost $"+"{cost}".color(:red)
+end
+
+
 
 puts "   _________    __   ________________".color(:red)
 puts "  / ____/   |  / /  / ____/  _/_  __/".color(:red)
@@ -120,7 +139,7 @@ puts "                                                           "
 puts "Welcome to CalcIT!".color(:cyan) + " The GREATEST calculator ever conceived by the human mind."
 puts "Please select a calculator:"
 print "Enter 'a' for advanced, 'b' for basic, 'i' to calculate bmi,"
-puts "'m' to calculate monthly mortgage payments or 'q' to quit calcit: "
+puts "'m' to calculate monthly mortgage payments, 't' for trip or 'q' to quit calcit: "
 selection = gets.chomp.downcase
 
 
@@ -146,15 +165,18 @@ while selection != "q"
 
     basic_calc
 
+  elsif selection == "t"
+
+    trip
+
   else
 
     puts "Please enter a valid response!"
 
   end
 
-
   puts "Enter 'a' for advanced, 'b' for basic, 'i' to calculate bmi,"
-  puts "'m' to calculate monthly mortgage payments or 'q' to quit calcit: "
+  puts "'m' to calculate monthly mortgage payment, 't' to calculate a trip or 'q' to quit calcit: "
 
   selection = gets.chomp.downcase
 

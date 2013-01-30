@@ -109,6 +109,9 @@ def mortgage
   puts "$#{m(p, i, n)}"
 end
 
+def cost (distance, mpgadj, price)
+  (distance/mpgadj)*price
+end
 
 puts "   _________    __   ________________".color(:red)
 puts "  / ____/   |  / /  / ____/  _/_  __/".color(:red)
